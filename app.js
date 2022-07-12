@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config()
 
 // const authRouter = require('./routes/api/auth')
-// const contactsRouter = require('./routes/api/shops')
+// const shopsRouter = require('./routes/api/shops')
 
 const app = express()
 
@@ -17,7 +17,7 @@ const app = express()
 // app.use(express.json())
 
 // app.use('/api/auth', authRouter)
-// app.use('/api/contacts', shopsRouter)
+// app.use('/api/shops', shopsRouter)
 
 // app.use((req, res) => {
 //   res.status(404).json({ message: 'Not found' })
