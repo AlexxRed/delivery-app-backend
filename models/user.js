@@ -19,10 +19,9 @@ const userSchema = new Schema(
             match: emailRegexp,
             unique: true,
         },
-        subscription: {
+        phone: {
             type: String,
-            enum: ["starter", "pro", "business"],
-            default: "starter"
+            required: [true, 'Phone is required'],
         },
         token: {
             type: String,
