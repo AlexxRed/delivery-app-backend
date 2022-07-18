@@ -44,12 +44,11 @@ const joiUserRegisterSchema = Joi.object({
         .max(30)
         .required(),
     email: Joi.string()
-        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
-    phone: Joi.number().required(),
-    // subscription: Joi.string().required(),
-    password: Joi.string()
-        .min(8)
+        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
         .pattern(emailRegexp),
+    phone: Joi.number(),
+    password: Joi.string()
+        .min(8),
     repeat_password: Joi.ref('password'),
 });
 
