@@ -1,4 +1,4 @@
-const { Shops } = require("../../models/shops");
+const  Shops  = require("../../models/shops");
 
 const getById = async (req, res, next) => {
     try {
