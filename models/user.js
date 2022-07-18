@@ -20,7 +20,7 @@ const userSchema = new Schema(
             unique: true,
         },
         phone: {
-            type: String,
+            type: Number,
             required: [true, 'Phone is required'],
         },
         token: {
@@ -46,7 +46,7 @@ const joiUserRegisterSchema = Joi.object({
     email: Joi.string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
     phone: Joi.number().required(),
-    subscription: Joi.string().required(),
+    // subscription: Joi.string().required(),
     password: Joi.string()
         .min(8)
         .pattern(emailRegexp),
