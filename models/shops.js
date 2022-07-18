@@ -1,13 +1,11 @@
 const { Schema, model } = require('mongoose');
 
-const shopSchema = new Schema(
+const shopsSchema = new Schema(
     {
         shop: {
         type: String,
         },
-        products: {
-        type: Array,
-        },
+        products: { any: [] },
         added: {
         type: Boolean,
         default: false,
@@ -16,6 +14,6 @@ const shopSchema = new Schema(
     { versionKey: false, timestamps: true },
 );
 
-const Shop = model('shop', shopSchema);
+const Shops = model('shops', shopsSchema);
 
-module.exports = Shop
+module.exports = Shops
