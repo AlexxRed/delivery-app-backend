@@ -1,4 +1,4 @@
-const { User } = require("../../models")
+const { User } = require("../../models/user")
 const { createError } = require("../../services")
 const bcrypt = require("bcryptjs");
 const gravatar = require('gravatar');

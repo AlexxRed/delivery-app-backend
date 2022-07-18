@@ -4,11 +4,11 @@ const ctrl = require("../../controllers/auth");
 
 const { ctrlWrapper } = require("../../services");
 
-const validation = require("../../middlewares/validation");
+const validation = require("../../middlewares/validationUser");
 
 const authenticate = require("../../middlewares/authenticate");
 
-const { joiUserRegisterSchema, joiUserLoginSchema } = require("../../models");
+const { joiUserRegisterSchema, joiUserLoginSchema } = require("../../models/user");
 
 const router = express.Router();
 

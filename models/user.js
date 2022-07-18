@@ -45,7 +45,7 @@ const joiUserRegisterSchema = Joi.object({
         .required(),
     email: Joi.string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
-    phone: Joi.number().phone().required(),
+    phone: Joi.number().required(),
     subscription: Joi.string().required(),
     password: Joi.string()
         .min(8)
