@@ -18,6 +18,8 @@ router.post("/users/signup", validation(joiUserRegisterSchema), ctrlWrapper(ctrl
 // signin
 router.post("/users/login", validation(joiUserLoginSchema), ctrlWrapper(ctrl.login));
 
+router.get("/current", authenticate, ctrlWrapper(ctrl.getCurrent));
+
 router.get("/logout", authenticate, ctrlWrapper(ctrl.logout));
 
 module.exports = router
