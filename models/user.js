@@ -39,7 +39,6 @@ const User = model("user", userSchema)
 
 const joiUserRegisterSchema = Joi.object({
     name: Joi.string()
-        .alphanum()
         .min(3)
         .max(30)
         .required(),
