@@ -34,10 +34,10 @@ const User = model("user", userSchema)
 const joiUserRegisterSchema = Joi.object({
     name: Joi.string()
         .min(3)
-        .max(30)
-        .required(),
+        .max(30),
     email: Joi.string()
-        .email(),
+        .email()
+        .required(),
     phone: Joi.number(),
     password: Joi.string()
         .min(8),
