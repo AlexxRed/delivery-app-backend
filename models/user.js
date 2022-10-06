@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose")
 const Joi = require("joi");
 
-const emailRegexp = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
+// const emailRegexp = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
 
 const userSchema = new Schema(
     {
@@ -16,20 +16,14 @@ const userSchema = new Schema(
         email: {
             type: String,
             required: [true, 'Email is required'],
-            match: emailRegexp,
             unique: true,
         },
         phone: {
             type: Number,
-            required: [true, 'Phone is required'],
         },
         token: {
             type: String,
             default: '',
-        },
-        avatarURL: {
-            type: String,
-            required: true,
         },
     },
     { versionKey: false, timestamps: true },
@@ -43,8 +37,7 @@ const joiUserRegisterSchema = Joi.object({
         .max(30)
         .required(),
     email: Joi.string()
-        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
-        .pattern(emailRegexp),
+        .email(),
     phone: Joi.number(),
     password: Joi.string()
         .min(8),
@@ -53,7 +46,7 @@ const joiUserRegisterSchema = Joi.object({
 
 const joiUserLoginSchema = Joi.object({
     email: Joi.string()
-        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
+        .email(),
     password: Joi.string()
         .min(8),
 });
